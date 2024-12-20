@@ -1,5 +1,5 @@
 import { api, HydrateClient } from "#/trpc/server";
-import { Header } from "#/components/ui/headed/header";
+import { Header } from "#/components/headed/header";
 import {
   Card,
   CardHeader,
@@ -9,8 +9,6 @@ import {
 } from "#/components/ui/card";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
-
   void api.post.getLatest.prefetch();
 
   return (

@@ -22,11 +22,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={clsx("bg-background text-foreground", roboto.variable)}
-    >
-      <body>
+    <html lang="en" className={clsx("dark", roboto.variable)}>
+      <body className={clsx("bg-background text-foreground")}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
