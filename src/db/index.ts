@@ -7,7 +7,7 @@ config({ path: ".env" });
 
 const { env } = process;
 
-const connection = postgres(process.env.DATABASE_URL!, {
+export const connection = postgres(process.env.DATABASE_URL!, {
   max: env.DB_MIGRATING || env.DB_SEEDING ? 1 : undefined,
   onnotice: env.DB_SEEDING ? (notice) => console.log(notice) : undefined,
 });
