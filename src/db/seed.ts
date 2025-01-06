@@ -1,5 +1,5 @@
 import { type Table, getTableName, sql } from "drizzle-orm";
-import { db, connection } from "./index";
+import { db } from "./index";
 import * as schema from "./schema";
 import * as seeds from "./seeds";
 
@@ -22,4 +22,4 @@ for (const table of [schema.users]) {
 
 await seeds.seedTable(db);
 
-await connection.end();
+await db.$client.end();
