@@ -11,6 +11,10 @@ import {
 export default async function Home() {
   void api.post.getLatest.prefetch();
 
+  const users = await api.users.getUsers();
+
+  console.log(users);
+
   return (
     <HydrateClient>
       <div className="flex min-h-screen flex-col">
@@ -44,7 +48,7 @@ export default async function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="text-muted-foreground list-inside list-disc">
+                <ul className="list-inside list-disc text-muted-foreground">
                   <li>Web Development</li>
                   <li>Mobile App Design</li>
                   <li>UI/UX Consulting</li>
