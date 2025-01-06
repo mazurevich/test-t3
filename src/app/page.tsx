@@ -11,7 +11,7 @@ import {
 export default async function Home() {
   void api.post.getLatest.prefetch();
 
-  const users = await api.users.getUsers();
+  const users = await api.users.getUsersList({ page: 2, pageSize: 25 });
 
   console.log(users);
 
