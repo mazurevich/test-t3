@@ -8,6 +8,8 @@ export async function seedTable(db: db) {
       count: 100,
       columns: {
         phone: funcs.phoneNumber({ template: "37529#######" }),
+        firstName: funcs.firstName(),
+        lastName: funcs.lastName({ isUnique: true }),
       },
     },
   }));

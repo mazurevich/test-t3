@@ -44,7 +44,6 @@
     "superjson": "^2.2.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "tsx": "^4.19.2",
     "zod": "^3.23.3"
   },
   "devDependencies": {
