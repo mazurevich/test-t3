@@ -1,0 +1,90 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 95,
+		"attributePosition": "auto"
+	},
+	"organizeImports": { "enabled": true },
+	"files": {
+		"include": ["src/*", "./vite.config.js"],
+		"ignore": ["public/*", "build/*"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": { "recommended": true },
+		"ignore": ["node_modules/*", "build/*"]
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "all",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"quoteStyle": "single",
+			"attributePosition": "auto"
+		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": true
+		},
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 95
+		}
+	},
+	"overrides": [
+		{
+			"include": ["**/*.ts", "**/*.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noUselessElse": "warn"
+					},
+					"a11y": {
+						"useKeyWithClickEvents": "warn",
+						"useValidAnchor": "warn",
+						"noRedundantAlt": "warn",
+						"useMediaCaption": "warn",
+						"useAltText": "warn"
+					},
+					"performance": {
+						"noAccumulatingSpread": "warn",
+						"noDelete": "off"
+					},
+					"correctness": {
+						"useExhaustiveDependencies": "warn",
+						"noUnusedImports": "error",
+						"noUnusedVariables": "warn",
+						"noVoidTypeReturn": "warn"
+					},
+					"suspicious": {
+						"noExplicitAny": "warn",
+						"noImplicitAnyLet": "warn",
+						"noArrayIndexKey": "warn",
+						"noShadowRestrictedNames": "warn"
+					},
+					"complexity": {
+						"noForEach": "off",
+						"useOptionalChain": "warn",
+						"noUselessTernary": "warn"
+					},
+					"security": {
+						"noDangerouslySetInnerHtml": "warn"
+					}
+				}
+			}
+		}
+	]
+}

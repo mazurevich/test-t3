@@ -11,6 +11,7 @@ import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "#/trpc/react";
 import clsx from "clsx";
+import { SessionWrapper } from "#/components/session-wrapper/SesstionWrapper";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -22,10 +23,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={clsx("dark", roboto.variable)}>
-      <body className={clsx("bg-background text-foreground")}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
-    </html>
+    <SessionWrapper>
+      <html lang="en" className={clsx("dark", roboto.variable)}>
+        <body className={clsx("bg-background text-foreground")}>
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </body>
+      </html>
+    </SessionWrapper>
   );
 }
