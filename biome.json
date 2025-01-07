@@ -52,6 +52,16 @@
 					"style": {
 						"noUselessElse": "warn"
 					},
+					"nursery": {
+						"useSortedClasses": {
+							"fix": "safe",
+							"level": "warn",
+							"options": {
+								"attributes": ["classList"],
+								"functions": ["clsx", "cva", "tw", "tw.*"]
+							}
+						}
+					},
 					"a11y": {
 						"useKeyWithClickEvents": "warn",
 						"useValidAnchor": "warn",

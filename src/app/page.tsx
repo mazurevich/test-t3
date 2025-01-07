@@ -29,7 +29,7 @@ export default async function Home() {
 				<main className="flex-grow">
 					<div className="container mx-auto max-w-7xl px-4 py-8">
 						<Dashboard />
-						<h1 className="mb-6 text-4xl font-bold">Welcome to My Application</h1>
+						<h1 className="mb-6 font-bold text-4xl">Welcome to My Application</h1>
 						<Card className="mb-6">
 							<CardHeader>
 								<CardTitle>About Us</CardTitle>
