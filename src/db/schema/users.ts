@@ -1,14 +1,21 @@
-import { pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
-import { relations } from "drizzle-orm";
-import { posts } from "./posts";
+import { relations } from 'drizzle-orm';
+import { pgTable, text, timestamp } from 'drizzle-orm/pg-core';
+import { accounts } from './accounts';
+import { posts } from './posts';
+import { sessions } from './sessions';
 
-export const users = pgTable("users", {
-  id: serial().primaryKey(),
-  firstName: text(),
-  lastName: text(),
-  phone: varchar({ length: 256 }),
+export const users = pgTable('users', {
+	id: text()
+		.primaryKey()
+		.$defaultFn(() => crypto.randomUUID()),
+	name: text(),
+	email: text().unique(),
+	emailVerified: timestamp({ mode: 'date' }),
+	image: text(),
 });
 
 export const usersRelations = relations(users, ({ many }) => ({
-  posts: many(posts),
+	posts: many(posts),
+	accounts: many(accounts),
+	session: many(sessions),
 }));
